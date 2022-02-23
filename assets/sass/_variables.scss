@@ -1,0 +1,47 @@
+/**
+ * project
+ */
+
+//color
+//https://pigment.shapefactory.co/?a=E9E0D5&b=16AFAB
+//https://pigment.shapefactory.co/?d=0&s=0&a=E9E0D5&b=16AFAB
+$cRicoLight: #57E8D0;
+$cRico: #27C4A7;
+$cRicoDark1: #08A787;
+$cRicoDark2: #07896E;
+$cWhite: #FFFFFF;
+$cWhiteDark1: #EAEAEA;
+$cWhiteDark2: #D5D5D5;
+$cWhiteDark3: #BABABA;
+$cBlack: #000000;
+
+//space
+$space: 10px;
+
+//font
+$fontSize: 1em;
+// $fontFamily: "M PLUS Rounded 1c"; //https://googlefonts.github.io/japanese/#roundedmplus1c
+$lineHeight: 1.4;
+
+//border-radius
+$radius: 6px;
+
+//BreakPoint
+$screenSm: 600px;
+$screenMd: 960px;
+$screenLg: 1264px;
+$screenXl: 1904px;
+
+
+/****************************************************************************************/
+
+
+/**
+ * vuetify
+ */
+// Ref: https://github.com/nuxt-community/vuetify-module#customvariables
+//
+// The variables you want to modify
+// $font-size-root: 20px;
+
+$font-size-root: $fontSize;
