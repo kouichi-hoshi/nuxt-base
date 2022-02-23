@@ -1,28 +1,27 @@
-
 /**
  * Media Queries
  */
 // BreakPoint sm
 @mixin mq-sm {
-  @media (min-width:$screenSm) {
+  @media (min-width: $screenSm) {
     @content;
   }
 }
 // BreakPoint md
 @mixin mq-md {
-  @media (min-width:$screenMd) {
+  @media (min-width: $screenMd) {
     @content;
   }
 }
 // BreakPoint lg
 @mixin mq-lg {
-  @media (min-width:$screenLg) {
+  @media (min-width: $screenLg) {
     @content;
   }
 }
 // BreakPoint xl
 @mixin mq-xl {
-  @media (min-width:$screenXl) {
+  @media (min-width: $screenXl) {
     @content;
   }
 }
