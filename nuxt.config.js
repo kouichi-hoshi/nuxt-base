@@ -9,7 +9,7 @@ export default {
     titleTemplate: '%s - nuxt-base',
     title: 'nuxt-base',
     htmlAttrs: {
-      lang: 'jp',
+      lang: 'ja',
       prefix: 'og: http://ogp.me/ns#',
     },
     meta: [
@@ -70,7 +70,7 @@ export default {
   vuetify: {
     customVariables: ['~/assets/sass/_variables.scss'],
     theme: {
-      dark: true,
+      dark: false,
       themes: {
         dark: {
           primary: colors.blue.darken2,
