@@ -2,6 +2,7 @@
   <v-app dark>
     <v-navigation-drawer
       v-model="drawer"
+      v-resize="checkBreakpoint"
       :mini-variant="miniVariant"
       :clipped="clipped"
       fixed
@@ -70,7 +71,36 @@ export default {
       rightDrawer: false,
       title: 'Vuetify.js',
       items: menuItems,
+      windowSize: {
+        x: 0,
+        y: 0,
+      },
+      breakpoint: false,
     }
+  },
+  mounted() {
+    this.checkBreakpoint('(min-width: 960px)')
+  },
+  methods: {
+    checkBreakpoint(bp) {
+      /**
+       * checkBreakpoint
+       * ウィンドウ幅（ビューポート）がブレイクポイントの条件に応じて
+       * @param bp {String} // ブレイクポイントを指定。例：'(min-width: 960px)'
+       */
+      const mediaQuery = window.matchMedia(bp)
+
+      // メディアクエリがtrueかどうかをチェック
+      if (mediaQuery.matches) {
+        this.breakpoint = false
+      } else {
+        this.breakpoint = true
+      }
+      this.windowSize = {
+        x: window.innerWidth,
+        y: window.innerHeight,
+      }
+    },
   },
 }
 </script>
