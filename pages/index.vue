@@ -1,5 +1,5 @@
 <template>
-  <div></div>
+  <div style="height: 5000px;">sample text</div>
 </template>
 
 <script>
