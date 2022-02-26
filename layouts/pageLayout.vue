@@ -6,6 +6,7 @@
       :clipped="clipped"
       fixed
       app
+      disable-resize-watcher
     >
       <ItemsContainer :items="items" />
     </v-navigation-drawer>
