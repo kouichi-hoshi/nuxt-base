@@ -7,7 +7,6 @@
       interval="7000"
       hide-delimiter-background
       show-arrows-on-hover
-
     >
       <v-carousel-item v-for="(color, i) of colors" :key="color">
         <v-sheet :color="color" height="100%" tile>
