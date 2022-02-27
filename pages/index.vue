@@ -1,30 +1,19 @@
 <template>
-  <div>
-    <v-carousel
-      v-model="model"
-      cycle
-      height="600"
-      interval="7000"
-      hide-delimiter-background
-      show-arrows-on-hover
-    >
-      <v-carousel-item v-for="(color, i) of colors" :key="color">
-        <v-sheet :color="color" height="100%" tile>
-          <v-row class="fill-height" align="center" justify="center">
-            <div class="text-h2">Slide {{ i + 1 }}</div>
-          </v-row>
-        </v-sheet>
-      </v-carousel-item>
-    </v-carousel>
+  <div class="l-container">
+    <carouselPanel :colors="colors"/>
   </div>
 </template>
 
 <script>
+import carouselPanel from '~/components/carouselPanel.vue'
+
 export default {
   name: 'IndexPage',
+  components: {
+    carouselPanel
+  },
   layout: 'pageLayout',
   data: () => ({
-    model: 0,
     colors: ['primary', 'secondary', 'yellow darken-2', 'red', 'orange'],
   }),
   head() {
