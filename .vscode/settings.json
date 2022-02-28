@@ -4,6 +4,7 @@
     "lintfix",
     "nuxt",
     "nuxtjs",
+    "src",
     "stylelint",
     "vuetify"
   ]

@@ -40,7 +40,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: ['~/assets/sass/global.scss'],
 
   // styleResources
   styleResources: {
@@ -81,6 +81,9 @@ export default {
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
           success: colors.green.accent3,
+        },
+        light: {
+          anchor: 'rgba(0, 0, 0, 0.87)',
         },
       },
     },

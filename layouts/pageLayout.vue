@@ -40,7 +40,7 @@
 
 <script>
 import menuItems from '~/models/menus.js'
-import ItemsContainer from '~/components/ItemsContainer.vue'
+import ItemsContainer from '~/components/itemsContainer.vue'
 
 export default {
   name: 'PageLayout',

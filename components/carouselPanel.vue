@@ -26,7 +26,7 @@ export default {
     colors: {
       type: Array,
       default: () => {
-        return [ 'gray']
+        return ['gray']
       },
     },
   },
