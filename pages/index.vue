@@ -1,6 +1,6 @@
 <template>
   <div class="l-container">
-    <CarouselPanel :colors="colors" />
+    <CarouselPanel :carousel-data="carouselData" />
     <section class="container mt-12">
       <h2 class="text-center">Items</h2>
       <ItemsView :items="items" />
@@ -9,9 +9,11 @@
 </template>
 
 <script>
+import createPath from '~/functions/createPath.js'
+import itemsSample from '~/models/itemsSample.js'
+import carouselData from '~/models/carouselData.js'
 import CarouselPanel from '~/components/CarouselPanel.vue'
 import ItemsView from '~/components/ItemsView.vue'
-import itemsSample from '~/models/itemsSample.js'
 
 export default {
   name: 'IndexPage',
@@ -21,8 +23,8 @@ export default {
   },
   layout: 'pageLayout',
   data: () => ({
-    colors: ['primary', 'secondary', 'yellow darken-2', 'red', 'orange'],
     items: itemsSample,
+    carouselData,
   }),
   head() {
     return {
@@ -30,6 +32,9 @@ export default {
       title: 'サイト名',
     }
   },
+  created() {
+    this.carouselData = createPath(carouselData, "/images/")
+  }
 }
 </script>
 
