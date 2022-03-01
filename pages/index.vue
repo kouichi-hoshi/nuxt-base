@@ -33,8 +33,8 @@ export default {
     }
   },
   created() {
-    this.carouselData = createPath(carouselData, "/images/")
-  }
+    this.carouselData = createPath(carouselData, '/images/')
+  },
 }
 </script>
 

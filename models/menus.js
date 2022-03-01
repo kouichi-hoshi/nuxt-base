@@ -9,4 +9,19 @@ export default [
     title: 'page1',
     to: '/page1',
   },
+  {
+    icon: 'mdi-apps',
+    title: 'page2',
+    to: '/page2',
+  },
+  {
+    icon: 'mdi-apps',
+    title: 'page3',
+    to: '/page3',
+  },
+  {
+    icon: 'mdi-apps',
+    title: 'page4',
+    to: '/page4',
+  },
 ]
