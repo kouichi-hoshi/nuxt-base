@@ -11,9 +11,9 @@
       <ItemsContainer :items="items" />
     </v-navigation-drawer>
 
-    <v-app-bar :clipped-left="clipped" flat shrink-on-scroll dense app>
+    <v-app-bar :clipped-left="clipped" flat shrink-on-scroll :height="52" app>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-toolbar-title v-text="title" />
+      <LogoComp :logo-options="logoOptions" />
       <v-spacer />
     </v-app-bar>
 
@@ -40,11 +40,13 @@
 
 <script>
 import menuItems from '~/models/menus.js'
+import LogoComp from '~/components/LogoComp.vue'
 import ItemsContainer from '~/components/ItemsContainer.vue'
 
 export default {
   name: 'PageLayout',
   components: {
+    LogoComp,
     ItemsContainer,
   },
   data() {
@@ -55,8 +57,12 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Vuetify.js',
       items: menuItems,
+      logoOptions: {
+        logoStyle: 'text',
+        logoText: 'Nuxt-Base',
+        logoImage: '/images/breakslow-UMUCQcDdLws-unsplash.jpg',
+      },
     }
   },
 }
