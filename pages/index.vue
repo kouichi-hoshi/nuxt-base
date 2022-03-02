@@ -1,6 +1,6 @@
 <template>
   <div class="l-container">
-    <CarouselPanel :carousel-data="carouselData" />
+    <CarouselPanel class="container" :carousel-options="carouselOptions" />
     <section class="container mt-12">
       <h2 class="text-center">Items</h2>
       <ItemsView :items="items" />
@@ -24,7 +24,12 @@ export default {
   layout: 'pageLayout',
   data: () => ({
     items: itemsSample,
-    carouselData,
+    carouselOptions: {
+      carouselItems: null,
+      height: 300,
+      interval: 8000,
+      aspectRatio: 2.5,
+    },
   }),
   head() {
     return {
@@ -33,7 +38,7 @@ export default {
     }
   },
   created() {
-    this.carouselData = createPath(carouselData, '/images/')
+    this.carouselOptions.carouselItems = createPath(carouselData, '/images/')
   },
 }
 </script>

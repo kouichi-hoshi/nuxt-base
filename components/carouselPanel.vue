@@ -3,15 +3,23 @@
     <v-carousel
       v-model="model"
       cycle
-      height="500"
-      interval="8000"
+      :height="carouselOptions.height"
+      :interval="carouselOptions.interval"
       hide-delimiter-background
       show-arrows-on-hover
     >
-      <v-carousel-item v-for="(carouselItem, i) of carouselData" :key="i">
+      <v-carousel-item
+        v-for="(carouselItem, i) of carouselOptions.carouselItems"
+        :key="i"
+      >
         <v-sheet height="100%" tile>
           <v-row class="fill-height" align="center" justify="center">
-            <v-img :src="carouselItem" cover aspect-ratio="2.5" alt="" />
+            <v-img
+              :src="carouselItem"
+              :aspect-ratio="carouselOptions.aspectRatio"
+              cover
+              alt=""
+            />
           </v-row>
         </v-sheet>
       </v-carousel-item>
@@ -23,10 +31,17 @@
 export default {
   name: 'CarouselPanel',
   props: {
-    carouselData: {
-      type: Array,
+    carouselOptions: {
+      /**
+       * carouselOptionsに格納するプロパティ
+       * @param {Array} carouselItem 画像URL
+       * @param {Number} height カルーセルパネルの高さ（ピクセル）
+       * @param {Number} interval カルーセルパネルがスライドした後の待機時間（ミリ秒）
+       * //TODO: パラメータを追加する  alt要素の値 class テキスト リンク  など
+       */
+      type: Object,
       default: () => {
-        return ['']
+        return {}
       },
     },
   },
@@ -35,9 +50,3 @@ export default {
   }),
 }
 </script>
-
-<style lang="scss">
-.v-carousel__controls {
-  bottom: 12px !important;
-}
-</style>
