@@ -3,11 +3,13 @@ export default [
     title: 'cafe',
     text: 'Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.',
     src: '/images/breakslow-UMUCQcDdLws-unsplash.jpg',
+    link: '/',
   },
   {
     title: 'cafe',
     text: 'Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.',
     src: '/images/jakub-dziubak-XtUd5SiX464-unsplash.jpg',
+    link: '/',
   },
   {
     title: 'cafe',
@@ -16,13 +18,13 @@ export default [
   },
   {
     title: 'cafe',
-    text: 'Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.',
     src: '/images/nathan-dumlao-6VhPY27jdps-unsplash.jpg',
+    link: '/',
   },
   {
     title: 'cafe',
-    text: 'Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.',
-    src: '/images/petr-sevcovic-qE1jxYXiwOA-unsplash.jpg',
+    text: 'Smallplates,salads&sandwichesanintimatesettingwith12indoorseatspluspatioseatingSmallplates,saladssandwichesanintimatesettingwith12indoorseatspluspatioseatingSmallplates,salads&sandwichesanintimatesettingwith12indoorseatspluspatioseatingSmallplates,salads&sandwichesanintimatesettingwith12indoorseatspluspatioseatingSmallplates,salads&sandwichesanintimatesettingwith12indoorseatspluspatioseating. Smallplates,salads&sandwichesanintimatesettingwith12indoorseatspluspatioseatingSmallplates,salads&sandwichesanintimatesettingwith12indoorseatspluspatioseatingSmallplates,salads&sandwichesanintimatesettingwith12indoorseatspluspatioseatingSmallplates,salads&sandwichesanintimatesettingwith12indoorseatspluspatioseatingSmallplates,salads&sandwichesanintimatesettingwith12indoorseatspluspatioseatingSmallplates,salads&sandwichesanintimatesettingwith12indoorseatspluspatioseating',
+    link: '/',
   },
   {
     title: 'cafe',

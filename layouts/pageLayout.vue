@@ -1,7 +1,7 @@
 <template>
   <v-app dark>
     <v-navigation-drawer v-model="drawer" fixed app disable-resize-watcher>
-      <ItemsContainer :items="items" />
+      <ListContainer :items="items" />
     </v-navigation-drawer>
 
     <v-app-bar flat :height="52" app>
@@ -23,13 +23,13 @@
 <script>
 import menuItems from '~/models/menus.js'
 import LogoComp from '~/components/LogoComp.vue'
-import ItemsContainer from '~/components/ItemsContainer.vue'
+import ListContainer from '~/components/ListContainer.vue'
 
 export default {
   name: 'PageLayout',
   components: {
     LogoComp,
-    ItemsContainer,
+    ListContainer,
   },
   data() {
     return {

@@ -5,3 +5,29 @@ a {
 img {
   max-width: 100%;
 }
+
+.pointer-events-none {
+  pointer-events: none;
+}
+
+.aspectRatio {
+  &__3-2 {
+    aspect-ratio: 3 / 2;
+  }
+  &__1-1 {
+    aspect-ratio: 1 / 1;
+  }
+}
+
+.max-width {
+  &__Md {
+    max-width: $screenMd;
+  }
+  &__lg {
+    max-width: $screenLg;
+  }
+
+  &__Xl {
+    max-width: $screenXl;
+  }
+}

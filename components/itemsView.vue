@@ -1,16 +1,31 @@
 <template>
-  <div class="items-view">
+  <div v-if="items" class="items-view" :class="itemsContainer">
     <v-card v-for="(item, i) of items" :key="i" tile flat>
-      <a href="">
-        <img class="items-view__img" :src="item.src" :alt="item.title" />
-        <v-card-title class="px-0">
-          <h3>{{ item.title }}</h3>
+      <a
+        :href="item.link"
+        :class="{ 'pointer-events-none': !item.link }"
+      >
+        <img
+          v-if="item.src"
+          :src="item.src"
+          :class="itemImageAspectRatio"
+          :alt="item.title"
+          class="items-view__img"
+        />
+        <v-card-title
+          :tag="itemNameTag"
+          :class="{ 'pointer-events-none': !item.link }"
+          class="px-0"
+        >
+          {{ item.title }}
         </v-card-title>
-
-        <v-card-text class="px-0">
-          <p>{{ item.text }}.</p>
-        </v-card-text>
       </a>
+      <v-card-text
+        :tag="itemTextTag"
+        class="px-0 mt-n8"
+      >
+        {{ item.text }}
+      </v-card-text>
     </v-card>
   </div>
 </template>
@@ -19,15 +34,45 @@
 export default {
   props: {
     items: {
+      /* 商品や投稿などのデータを配列で受け取る */
+      /**
+       * @param {Array} items コンテンツの情報
+       * @param {Object} items.title コンテンツののタイトル
+       * @param {Object} items.text コンテンツの説明文
+       * @param {Object} items.src サムネイル画像URL
+       * @param {Object} items.link リンク先URL
+       */
       type: Array,
       default: () => {
-        return [
-          {
-            title: 'no item',
-            text: 'no text',
-            src: '',
-          },
-        ]
+        return []
+      },
+    },
+    itemsContainer:{
+      /* CSSセレクタでコンテナのサイズとレイアウトを設定する（左寄せ/右寄せ/センター） */
+      type: String,
+      default: () => {
+        return ""
+      },
+    },
+    itemImageAspectRatio: {
+      /* CSSセレクタでアスペクトレシオを設定する */
+      type: String,
+      default: () => {
+        return "aspectRatio__3-2"
+      },
+    },
+    itemNameTag: {
+      /* タイトルをラップするhtmlタグを設定する */
+      type: String,
+      default: () => {
+        return "div"
+      },
+    },
+    itemTextTag: {
+      /* テキストをラップするhtmlタグを設定する */
+      type: String,
+      default: () => {
+        return "div"
       },
     },
   },
@@ -41,7 +86,6 @@ export default {
   gap: $space * 2;
 
   &__img {
-    aspect-ratio: 3 / 2;
     object-fit: cover;
   }
 }

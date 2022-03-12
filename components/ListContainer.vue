@@ -1,5 +1,5 @@
 <template>
-  <v-list color="items-container">
+  <v-list class="list-container">
     <v-list-item v-for="(item, i) in items" :key="i" :to="item.to" router exact>
       <v-list-item-action>
         <v-icon>{{ item.icon }}</v-icon>
