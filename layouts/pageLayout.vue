@@ -6,7 +6,7 @@
 
     <v-app-bar flat :height="52" app>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <LogoComp :logo-options="logoOptions" />
+      <SiteLogo :logo-options="logoOptions" />
       <v-spacer />
     </v-app-bar>
 
@@ -22,13 +22,13 @@
 
 <script>
 import menuItems from '~/models/menus.js'
-import LogoComp from '~/components/LogoComp.vue'
+import SiteLogo from '~/components/SiteLogo.vue'
 import ListContainer from '~/components/ListContainer.vue'
 
 export default {
   name: 'PageLayout',
   components: {
-    LogoComp,
+    SiteLogo,
     ListContainer,
   },
   data() {

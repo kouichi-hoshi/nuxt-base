@@ -1,3 +1,14 @@
+:root {
+  //CustomGap
+  --gap24: 24px; //$space*2と同値
+
+  /**
+   * grid column width
+   * min-width値 算出  calc((コンテナmax-width[lg] / カラム数:3)
+   */
+  --gridMinWidth: calc(1185px / 3); //〜sm:1 md:2 lg:3 xl〜:4
+}
+
 a {
   text-decoration: none;
 }
@@ -10,24 +21,25 @@ img {
   pointer-events: none;
 }
 
-.aspectRatio {
-  &__3-2 {
-    aspect-ratio: 3 / 2;
-  }
-  &__1-1 {
-    aspect-ratio: 1 / 1;
-  }
-}
+//TODO: mixinまたはUtilityClass化するか検討
+// .aspectRatio {
+//   &__3x2 {
+//     aspect-ratio: 3 / 2;
+//   }
+//   &__1x1 {
+//     aspect-ratio: 1 / 1;
+//   }
+// }
 
-.max-width {
-  &__Md {
-    max-width: $screenMd;
-  }
-  &__lg {
-    max-width: $screenLg;
-  }
-
-  &__Xl {
-    max-width: $screenXl;
-  }
-}
+//TODO: mixinまたはUtilityClass化するか検討
+// .max-width {
+//   &__Md {
+//     max-width: $screenMd;
+//   }
+//   &__lg {
+//     max-width: $screenLg;
+//   }
+//   &__Xl {
+//     max-width: $screenXl;
+//   }
+// }
