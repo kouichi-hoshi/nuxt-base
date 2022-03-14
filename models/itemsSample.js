@@ -37,8 +37,6 @@ export default [
     src: '/images/toa-heftiba-W6sqUYlJRiw-unsplash.jpg',
   },
   {
-    title: 'cafe',
-    text: 'Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.',
     src: '/images/wade-austin-ellis-4YApsoSaNKA-unsplash.jpg',
   },
 ]

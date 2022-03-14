@@ -1,12 +1,20 @@
 :root {
+  //container max-Width
+  --maxWidthMd: 900px;
+  --maxWidthLg: 1185px;
+  --maxWidthXl: 1785px;
+
   //CustomGap
-  --gap24: 24px; //$space*2と同値
+  --gap12: 12px;
+  --gap24: 24px;
+  --gap36: 36px;
 
   /**
    * grid column width
-   * min-width値 算出  calc((コンテナmax-width[lg] / カラム数:3)
+   * min-width値 算出  calc((コンテナmax-widthLg / カラム数:3)
    */
-  --gridMinWidth: calc(1185px / 3); //〜sm:1 md:2 lg:3 xl〜:4
+  --gridMinWidth: calc(320px);
+  --gridMinWidthLg: calc(var(--maxWidthLg) / 3); //〜sm:1 md:2 lg:3 xl〜:4
 }
 
 a {

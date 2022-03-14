@@ -1,17 +1,13 @@
 <template>
   <div class="l-container">
-    <CarouselPanel
-      :carousel-options="carouselOptions"
-      classes-outer="mb-12"
-    />
-    <section class="mb-12 px-md-6">
+    <CarouselPanel :carousel-options="carouselOptions" classes-outer="mb-12" />
+    <section class="mb-12">
       <Headline classes-outer="py-12 text-h2 text-center">Items</Headline>
       <ItemsView :items="itemsOptions.items" />
     </section>
     <section class="mb-12 px-md-6">
       <Headline
         tag-name="h3"
-        items-container="lg"
         classes-outer="py-12 text-center"
         classes-headline="text-h3"
       >
@@ -19,6 +15,7 @@
       </Headline>
       <ItemsView
         :items="itemsOptions.items"
+        items-gap="gap-shingle"
         item-image-aspect-ratio="ar1x1"
         items-container="lg"
       />
@@ -33,9 +30,26 @@
       </Headline>
       <ItemsView
         :items="itemsOptions.items"
+        items-gap="gap-triple"
         item-image-aspect-ratio="ar16x8"
         items-container="md"
-        item-name-tag="h3"
+        item-title-tag="h3"
+        item-text-tag="div"
+      />
+    </section>
+    <section class="mb-12">
+      <Headline
+        tag-name="h4"
+        classes-outer="py-12 text-center"
+        classes-headline="text-h4"
+      >
+        Items Square
+      </Headline>
+      <ItemsView
+        :items="itemsOptions.itemsSquare"
+        classes-outer="start-two-column mx-auto"
+        items-gap="gap-normal"
+        item-image-aspect-ratio="ar1x1"
         item-text-tag="div"
       />
     </section>
@@ -45,6 +59,7 @@
 <script>
 import createPath from '~/functions/createPath.js'
 import items from '~/models/itemsSample.js'
+import itemsSquare from '~/models/itemsSquare.js'
 import carouselData from '~/models/carouselData.js'
 import CarouselPanel from '~/components/CarouselPanel.vue'
 import Headline from '~/components/Headline.vue'
@@ -61,10 +76,7 @@ export default {
   data: () => ({
     itemsOptions: {
       items,
-      itemsContainer: 'xl',
-      itemNameTag: 'h3',
-      itemTextTag: 'p',
-      itemImageAspectRatio: 'ar3x2',
+      itemsSquare,
     },
     carouselOptions: {
       carouselItems: null,
