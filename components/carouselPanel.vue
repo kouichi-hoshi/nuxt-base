@@ -1,5 +1,5 @@
 <template>
-  <div class="carouselPanel">
+  <div class="carouselPanel" :class="classesOuter">
     <v-carousel
       v-model="model"
       cycle
@@ -42,6 +42,12 @@ export default {
       type: Object,
       default: () => {
         return {}
+      },
+    },
+    classesOuter: {
+      type: String,
+      default: () => {
+        return ''
       },
     },
   },

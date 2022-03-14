@@ -44,7 +44,7 @@ export default {
     itemsContainer: {
       type: String,
       default: () => {
-        return 'lg'
+        return 'xl'
       },
     },
     // サムネイル画像のアスペクトレシオを設定する [ar16x8, ar4x3, ar3x2, ar1x1]
@@ -58,14 +58,14 @@ export default {
     itemNameTag: {
       type: String,
       default: () => {
-        return 'div'
+        return 'h2'
       },
     },
     // テキストをラップするhtmlタグを設定する
     itemTextTag: {
       type: String,
       default: () => {
-        return 'div'
+        return 'p'
       },
     },
   },

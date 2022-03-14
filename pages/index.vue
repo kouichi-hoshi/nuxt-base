@@ -1,44 +1,42 @@
 <template>
   <div class="l-container">
-    <CarouselPanel :carousel-options="carouselOptions" />
+    <CarouselPanel
+      :carousel-options="carouselOptions"
+      classes-outer="mb-12"
+    />
     <section class="mb-12 px-md-6">
       <Headline classes-outer="py-12 text-h2 text-center">Items</Headline>
-      <ItemsView
-        :items="itemsOptions.items"
-        :item-image-aspect-ratio="itemsOptions.itemImageAspectRatio"
-        :items-container="itemsOptions.itemsContainer"
-        :item-name-tag="itemsOptions.itemNameTag"
-        :item-text-tag="itemsOptions.itemTextTag"
-      />
+      <ItemsView :items="itemsOptions.items" />
     </section>
     <section class="mb-12 px-md-6">
       <Headline
         tag-name="h3"
-        classes-outer="py-12 text-h2 text-center"
+        items-container="lg"
+        classes-outer="py-12 text-center"
         classes-headline="text-h3"
-        >Items2</Headline
       >
+        Items2
+      </Headline>
       <ItemsView
         :items="itemsOptions.items"
-        :item-image-aspect-ratio="ar16x8"
-        :items-container="lg"
-        :item-name-tag="h2"
-        :item-text-tag="p"
+        item-image-aspect-ratio="ar1x1"
+        items-container="lg"
       />
     </section>
     <section class="mb-12 px-md-6">
       <Headline
         tag-name="h4"
-        classes-outer="py-12 text-h2 text-center"
-        classes-headline="text-h1"
-        >Items3</Headline
+        classes-outer="py-12 text-center"
+        classes-headline="text-h4"
       >
+        Items3
+      </Headline>
       <ItemsView
         :items="itemsOptions.items"
-        :item-image-aspect-ratio="ar1x1"
-        :items-container="md"
-        :item-name-tag="h2"
-        :item-text-tag="p"
+        item-image-aspect-ratio="ar16x8"
+        items-container="md"
+        item-name-tag="h3"
+        item-text-tag="div"
       />
     </section>
   </div>
