@@ -1,8 +1,8 @@
 <template>
   <div class="l-container">
     <CarouselPanel :carousel-options="carouselOptions" />
-    <section class="mt-12 px-md-6">
-      <h2 class="py-12 text-h2 text-center">Items</h2>
+    <section class="mb-12 px-md-6">
+      <Headline classes-outer="py-12 text-h2 text-center">Items</Headline>
       <ItemsView
         :items="itemsOptions.items"
         :item-image-aspect-ratio="itemsOptions.itemImageAspectRatio"
@@ -10,7 +10,9 @@
         :item-name-tag="itemsOptions.itemNameTag"
         :item-text-tag="itemsOptions.itemTextTag"
       />
-      <h2 class="py-12 text-h2 text-center">Items2</h2>
+    </section>
+    <section class="mb-12 px-md-6">
+      <Headline tag-name="h3" classes-outer="py-12 text-h2 text-center" classes-headline="text-h3">Items2</Headline>
       <ItemsView
         :items="itemsOptions.items"
         :item-image-aspect-ratio="'ar16x8'"
@@ -18,7 +20,9 @@
         :item-name-tag="'h2'"
         :item-text-tag="'p'"
       />
-      <h2 class="py-12 text-h2 text-center">Items3</h2>
+    </section>
+    <section class="mb-12 px-md-6">
+      <Headline tag-name="h4" classes-outer="py-12 text-h2 text-center" classes-headline="text-h1">Items2</Headline>
       <ItemsView
         :items="itemsOptions.items"
         :item-image-aspect-ratio="'ar1x1'"
@@ -35,12 +39,14 @@ import createPath from '~/functions/createPath.js'
 import items from '~/models/itemsSample.js'
 import carouselData from '~/models/carouselData.js'
 import CarouselPanel from '~/components/CarouselPanel.vue'
+import Headline from '~/components/Headline.vue'
 import ItemsView from '~/components/ItemsView.vue'
 
 export default {
   name: 'IndexPage',
   components: {
     CarouselPanel,
+    Headline,
     ItemsView,
   },
   layout: 'pageLayout',
