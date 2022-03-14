@@ -13,8 +13,8 @@
    * grid column width
    * min-width値 算出  calc((コンテナmax-widthLg / カラム数:3)
    */
-  --gridMinWidth: calc(320px);
-  --gridMinWidthLg: calc(var(--maxWidthLg) / 3); //〜sm:1 md:2 lg:3 xl〜:4
+  --gridMinWidth: 320px;
+  --gridMinWidthLg: calc(var(--maxWidthLg) / 3);
 }
 
 a {
