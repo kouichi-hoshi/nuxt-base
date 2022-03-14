@@ -12,23 +12,33 @@
       />
     </section>
     <section class="mb-12 px-md-6">
-      <Headline tag-name="h3" classes-outer="py-12 text-h2 text-center" classes-headline="text-h3">Items2</Headline>
+      <Headline
+        tag-name="h3"
+        classes-outer="py-12 text-h2 text-center"
+        classes-headline="text-h3"
+        >Items2</Headline
+      >
       <ItemsView
         :items="itemsOptions.items"
-        :item-image-aspect-ratio="'ar16x8'"
-        :items-container="'lg'"
-        :item-name-tag="'h2'"
-        :item-text-tag="'p'"
+        :item-image-aspect-ratio="ar16x8"
+        :items-container="lg"
+        :item-name-tag="h2"
+        :item-text-tag="p"
       />
     </section>
     <section class="mb-12 px-md-6">
-      <Headline tag-name="h4" classes-outer="py-12 text-h2 text-center" classes-headline="text-h1">Items2</Headline>
+      <Headline
+        tag-name="h4"
+        classes-outer="py-12 text-h2 text-center"
+        classes-headline="text-h1"
+        >Items3</Headline
+      >
       <ItemsView
         :items="itemsOptions.items"
-        :item-image-aspect-ratio="'ar1x1'"
-        :items-container="'md'"
-        :item-name-tag="'h2'"
-        :item-text-tag="'p'"
+        :item-image-aspect-ratio="ar1x1"
+        :items-container="md"
+        :item-name-tag="h2"
+        :item-text-tag="p"
       />
     </section>
   </div>

@@ -1,7 +1,7 @@
 <template>
   <div :class="classesOuter">
     <component :is="tagName" :class="classesHeadline">
-      <slot>title</slot>
+      <slot>headline</slot>
     </component>
   </div>
 </template>
@@ -28,6 +28,6 @@ export default {
         return 'text-h2'
       },
     },
-  }
+  },
 }
 </script>
