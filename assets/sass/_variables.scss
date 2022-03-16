@@ -46,3 +46,7 @@ $font-size-root: $fontSize;
 // VCarousel
 @import '~vuetify/src/components/VCarousel/_variables.scss';
 $carousel-dot-margin: 0 10px;
+
+// VDialog
+@import '~vuetify/src/components/VDialog/_variables.scss';
+$dialog-border-radius: 0;

@@ -12,7 +12,7 @@
       class="items-view__shingle"
     >
       <a :href="item.link" :class="{ 'pointer-events-none': !item.link }">
-        <img
+        <v-img
           v-if="item.src"
           :src="item.src"
           :class="itemImageAspectRatio"
@@ -65,11 +65,11 @@ export default {
         return 'gap-double'
       },
     },
-    // サムネイル画像のアスペクトレシオを設定する [ar16x8, ar4x3, ar3x2, ar1x1]
+    // サムネイル画像のアスペクトレシオを設定する [ar16x9, ar4x3, ar3x2, ar1x1]
     itemImageAspectRatio: {
       type: String,
       default: () => {
-        return 'ar3x2'
+        return 'ar4x3'
       },
     },
     // 最も外側の要素にclassを追加できる startTwoColumnを追加するとモバイル表示の初期カラムが2列になる
@@ -136,8 +136,8 @@ export default {
   &.md {
     max-width: $screenMd;
   }
-  & .ar16x8 {
-    aspect-ratio: 16 / 8;
+  & .ar16x9 {
+    aspect-ratio: 16 / 9;
   }
   & .ar4x3 {
     aspect-ratio: 4 / 3;
