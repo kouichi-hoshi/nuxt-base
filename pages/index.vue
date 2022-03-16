@@ -4,7 +4,7 @@
 
     <section class="mb-12">
       <Headline classes-outer="py-12 text-h2 text-center">Items</Headline>
-      <ItemsView :items="itemsOptions.items" />
+      <ItemsList :items="itemsOptions.items" item-image-aspect-ratio="ar16x9" />
     </section>
 
     <section class="mb-12">
@@ -15,10 +15,10 @@
       >
         Items2
       </Headline>
-      <ItemsView
+      <ItemsList
         :items="itemsOptions.items"
         items-gap="gap-shingle"
-        item-image-aspect-ratio="ar1x1"
+        item-image-aspect-ratio="ar4x3"
         items-container="lg"
       />
     </section>
@@ -31,10 +31,10 @@
       >
         Items3
       </Headline>
-      <ItemsView
+      <ItemsList
         :items="itemsOptions.items"
         items-gap="gap-triple"
-        item-image-aspect-ratio="ar16x9"
+        item-image-aspect-ratio="ar3x2"
         items-container="lg"
         item-title-tag="h3"
         item-text-tag="div"
@@ -49,7 +49,7 @@
       >
         Items Square
       </Headline>
-      <ItemsView
+      <ItemsList
         :items="itemsOptions.itemsSquare"
         classes-outer="start-two-column mx-auto"
         items-gap="gap-double"
@@ -67,7 +67,8 @@
       >
         MediaGallery
       </Headline>
-      <MediaGallery
+      <ItemsList
+        gallery-mode
         :items="itemsOptions.itemsSquare"
         classes-outer="mx-auto"
         items-gap="gap-normal"
@@ -85,16 +86,14 @@ import itemsSquare from '~/models/itemsSquare.js'
 import carouselData from '~/models/carouselData.js'
 import CarouselPanel from '~/components/CarouselPanel.vue'
 import Headline from '~/components/Headline.vue'
-import ItemsView from '~/components/ItemsView.vue'
-import MediaGallery from '~/components/MediaGallery.vue'
+import ItemsList from '~/components/ItemList.vue'
 
 export default {
   name: 'IndexPage',
   components: {
     CarouselPanel,
     Headline,
-    ItemsView,
-    MediaGallery,
+    ItemsList,
   },
   layout: 'pageLayout',
   data: () => ({

@@ -24,26 +24,3 @@ img {
 .pointer-events-none {
   pointer-events: none;
 }
-
-//TODO: mixinまたはUtilityClass化するか検討
-// .aspectRatio {
-//   &__3x2 {
-//     aspect-ratio: 3 / 2;
-//   }
-//   &__1x1 {
-//     aspect-ratio: 1 / 1;
-//   }
-// }
-
-//TODO: mixinまたはUtilityClass化するか検討
-// .max-width {
-//   &__Md {
-//     max-width: $screenMd;
-//   }
-//   &__lg {
-//     max-width: $screenLg;
-//   }
-//   &__Xl {
-//     max-width: $screenXl;
-//   }
-// }
