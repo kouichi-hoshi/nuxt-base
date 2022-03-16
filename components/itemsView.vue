@@ -2,7 +2,12 @@
   <div
     v-if="items"
     class="items-view mx-auto"
-    :class="[itemsContainer, itemsGap, classesOuter]"
+    :class="[
+      itemsContainer,
+      itemsGap,
+      classesOuter,
+      { 'width-constant': widthConstant },
+    ]"
   >
     <v-card
       v-for="(item, i) of items"
@@ -51,11 +56,11 @@ export default {
         return []
       },
     },
-    // コンテナのサイズを設定する（xl, lg, md)
+    // コンテナのサイズを設定する（md, lg, xl, null)
     itemsContainer: {
       type: String,
       default: () => {
-        return 'xl'
+        return null
       },
     },
     // アイテム間のGapを設定する [gap-triple(36px), gap-double(24px), gap-shingle(12px), gap-normal(0px)]
@@ -72,11 +77,18 @@ export default {
         return 'ar4x3'
       },
     },
-    // 最も外側の要素にclassを追加できる startTwoColumnを追加するとモバイル表示の初期カラムが2列になる
+    // 最も外側の要素にclassを追加できる
     classesOuter: {
       type: String,
       default: () => {
         return ''
+      },
+    },
+    // カラム幅が160px〜200pxの範囲で固定になる
+    widthConstant: {
+      type: Boolean,
+      default: () => {
+        return false
       },
     },
     // タイトルをラップするhtmlタグを設定する
@@ -102,27 +114,30 @@ export default {
 
 .items-view {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, 100%);
   @include mq-md {
-    grid-template-columns: repeat(auto-fit, minmax(var(--gridMinWidthLg), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(var(--gridMinWidth), 1fr));
   }
-  &.start-two-column {
-    grid-template-columns: repeat(auto-fit, minmax(calc(320px / 2), 1fr));
-    @media (min-width: 375px) {
-      grid-template-columns: repeat(auto-fit, minmax(calc(375px / 2), 1fr));
+  &.width-constant {
+    grid-template-columns: repeat(auto-fit, minmax(50%, 1fr)); //2列
+    @include mq-sm {
+      grid-template-columns: repeat(auto-fit, minmax(20%, 1fr)); //5列
+    }
+    @include mq-lg {
+      grid-template-columns: repeat(auto-fit, minmax(12%, 1fr)); //8列
     }
   }
-  &.gap-triple {
-    gap: var(--gap36);
-  }
-  &.gap-double {
-    gap: var(--gap24);
+  &.gap-normal {
+    gap: normal;
   }
   &.gap-shingle {
     gap: var(--gap12);
   }
-  &.gap-normal {
-    gap: normal;
+  &.gap-double {
+    gap: var(--gap24);
+  }
+  &.gap-triple {
+    gap: var(--gap36);
   }
   &__img {
     object-fit: cover;

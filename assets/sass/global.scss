@@ -9,12 +9,8 @@
   --gap24: 24px;
   --gap36: 36px;
 
-  /**
-   * grid column width
-   * min-width値 算出  calc((コンテナmax-widthLg / カラム数:3)
-   */
-  --gridMinWidth: 320px;
-  --gridMinWidthLg: calc(var(--maxWidthLg) / 3);
+  // grid column width
+  --gridMinWidth: 395px;
 }
 
 a {

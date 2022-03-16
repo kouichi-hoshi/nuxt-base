@@ -7,7 +7,7 @@
       <ItemsView :items="itemsOptions.items" />
     </section>
 
-    <section class="mb-12 px-md-6">
+    <section class="mb-12">
       <Headline
         tag-name="h3"
         classes-outer="py-12 text-center"
@@ -23,7 +23,7 @@
       />
     </section>
 
-    <section class="mb-12 px-md-6">
+    <section class="mb-12">
       <Headline
         tag-name="h4"
         classes-outer="py-12 text-center"
@@ -35,7 +35,7 @@
         :items="itemsOptions.items"
         items-gap="gap-triple"
         item-image-aspect-ratio="ar16x9"
-        items-container="md"
+        items-container="lg"
         item-title-tag="h3"
         item-text-tag="div"
       />
@@ -54,7 +54,7 @@
         classes-outer="start-two-column mx-auto"
         items-gap="gap-double"
         item-image-aspect-ratio="ar1x1"
-        items-container="lg"
+        items-container="md"
         item-text-tag="div"
       />
     </section>
@@ -72,7 +72,7 @@
         classes-outer="mx-auto"
         items-gap="gap-normal"
         item-image-aspect-ratio="ar1x1"
-        min-column-two
+        width-constant
       />
     </section>
   </div>

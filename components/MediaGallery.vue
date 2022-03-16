@@ -6,12 +6,11 @@
       itemsContainer,
       itemsGap,
       classesOuter,
-      { 'min-column-two': minColumnTwo },
+      { 'width-constant': widthConstant },
     ]"
   >
     <div v-for="(item, i) of items" :key="i" class="media-gallery__shingle">
-      <v-dialog v-model="dialog[i]" width="800"
-        ><!--TODO-->
+      <v-dialog v-model="dialog[i]" width="800">
         <template #activator="{ on, attrs }">
           <v-img
             v-if="item.src"
@@ -66,11 +65,11 @@ export default {
         return []
       },
     },
-    // コンテナのサイズを設定する（xl, lg, md)
+    // コンテナのサイズを設定する（md, lg, xl, null)
     itemsContainer: {
       type: String,
       default: () => {
-        return 'xl'
+        return null
       },
     },
     // アイテム間のGapを設定する [gap-triple(36px), gap-double(24px), gap-shingle(12px), gap-normal(0px)]
@@ -94,8 +93,8 @@ export default {
         return ''
       },
     },
-    // startTwoColumnを追加するとモバイル表示のカラムが2列になる
-    minColumnTwo: {
+    // カラム幅が160px〜200pxの範囲で固定になる
+    widthConstant: {
       type: Boolean,
       default: () => {
         return false
@@ -108,9 +107,6 @@ export default {
     }
   },
   created() {
-    // if (this.minColumnTwo === true) {
-    //   this.startTwoColumn = true
-    // }
     // 個々のdialogに対してflagを設定する
     for (const i in this.items) {
       this.dialog[i] = false
@@ -129,27 +125,33 @@ export default {
 
 .media-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, 100%);
   @include mq-md {
-    grid-template-columns: repeat(auto-fit, minmax(var(--gridMinWidthLg), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(var(--gridMinWidth), 1fr));
   }
-  &.min-column-two {
-    grid-template-columns: repeat(auto-fit, minmax(calc(320px / 2), 1fr));
-    @media (min-width: 375px) {
-      grid-template-columns: repeat(auto-fit, minmax(calc(375px / 2), 1fr));
+  &.width-constant {
+    grid-template-columns: repeat(auto-fit, minmax(50%, 1fr)); //2列
+    @include mq-sm {
+      grid-template-columns: repeat(auto-fit, minmax(20%, 1fr)); //5列
+    }
+    @include mq-lg {
+      grid-template-columns: repeat(auto-fit, minmax(12%, 1fr)); //8列
     }
   }
-  &.gap-triple {
-    gap: var(--gap36);
-  }
-  &.gap-double {
-    gap: var(--gap24);
+  &.gap-normal {
+    gap: normal;
   }
   &.gap-shingle {
     gap: var(--gap12);
   }
-  &.gap-normal {
-    gap: normal;
+  &.gap-double {
+    gap: var(--gap24);
+  }
+  &.gap-triple {
+    gap: var(--gap36);
+  }
+  &__img {
+    object-fit: cover;
   }
   &.xl {
     max-width: $screenXl;
@@ -174,6 +176,7 @@ export default {
   }
   &__shingle {
     line-height: 0;
+    cursor: pointer;
   }
   &__title {
     background: rgba($cWhite, 0.75);
