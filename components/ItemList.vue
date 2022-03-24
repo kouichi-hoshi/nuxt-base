@@ -177,8 +177,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~/assets/sass/_mixins.scss'; //TODO: styleResourcesの不具合確認
-
 .item-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, 100%);

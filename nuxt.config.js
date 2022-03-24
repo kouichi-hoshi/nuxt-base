@@ -44,7 +44,7 @@ export default {
 
   // styleResources
   styleResources: {
-    scss: ['~/assets/sass/_mixins.scss', '~/assets/sass/_variables.scss'],
+    scss: ['~/assets/sass/_bundle.scss'],
   },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -64,11 +64,13 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: [
+    "@nuxtjs/style-resources"
+  ],
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
-    customVariables: ['~/assets/sass/_variables.scss'],
+    customVariables: ['~/assets/sass/settings/_variables.scss'],
     treeShake: true,
     theme: {
       dark: false,
