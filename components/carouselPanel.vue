@@ -1,9 +1,9 @@
 <template>
-  <div class="carouselPanel" :class="classesOuter">
+  <div v-resize="onResize" class="carouselPanel" :class="classesOuter">
     <v-carousel
       v-model="model"
       cycle
-      :height="carouselOptions.height"
+      :height="height"
       :interval="carouselOptions.interval"
       hide-delimiter-background
       show-arrows-on-hover
@@ -12,7 +12,7 @@
         v-for="(carouselItem, i) of carouselOptions.carouselItems"
         :key="i"
       >
-        <v-sheet height="100%" tile>
+        <v-sheet tile>
           <v-row class="fill-height" align="center" justify="center">
             <v-img
               :src="carouselItem"
@@ -53,6 +53,20 @@ export default {
   },
   data: () => ({
     model: 0,
+    windowSize: {
+      x: 0,
+      y: 0,
+    },
+    height: null,
   }),
+  mounted () {
+    this.onResize()
+  },
+  methods: {
+    onResize() {
+      this.windowSize = { x: window.innerWidth, y: window.innerHeight }
+      this.height = this.windowSize.x / 2
+    },
+  }
 }
 </script>

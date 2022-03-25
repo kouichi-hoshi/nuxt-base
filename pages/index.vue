@@ -5,7 +5,7 @@
     <section class="mb-12">
       <Headline classes-outer="py-12 text-h2 text-center">Items</Headline>
       <ItemsList :items="itemsOptions.items" item-image-aspect-ratio="ar16x9" />
-      <div class="d-flex justify-center">
+      <div class="mt-6 d-md-flex justify-center">
         <CreateButtons
           :name="'page1'"
           tag-name="p"
@@ -136,7 +136,6 @@ export default {
     },
     carouselOptions: {
       carouselItems: null,
-      height: 640,
       interval: 8000,
       aspectRatio: 16 / 8,
     },
