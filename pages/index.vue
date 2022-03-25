@@ -5,6 +5,37 @@
     <section class="mb-12">
       <Headline classes-outer="py-12 text-h2 text-center">Items</Headline>
       <ItemsList :items="itemsOptions.items" item-image-aspect-ratio="ar16x9" />
+      <div class="d-flex justify-center">
+        <CreateButtons
+          :name="'page1'"
+          tag-name="p"
+          :menu-options="[1]"
+          :outer-class="'text-center'"
+          :button-class="'mx-1'"
+        >
+          page0
+        </CreateButtons>
+        <CreateButtons
+          :name="'page1'"
+          tag-name="p"
+          :menu-options="[2]"
+          :outer-class="'text-center'"
+          :button-class="'mx-1'"
+        />
+        <CreateButtons
+          tag-name="p"
+          :menu-options="[3]"
+          :outer-class="'text-center'"
+          :button-class="'mx-1'"
+        >
+          page2
+        </CreateButtons>
+      </div>
+      <CreateButtons
+        :name="'btn-container'"
+        :menu-options="[1, 2, 3]"
+        :outer-class="'mt-6 text-center'"
+      />
     </section>
 
     <section class="mb-12">
@@ -87,6 +118,7 @@ import carouselData from '~/models/carouselData.js'
 import CarouselPanel from '~/components/CarouselPanel.vue'
 import Headline from '~/components/Headline.vue'
 import ItemsList from '~/components/ItemList.vue'
+import CreateButtons from '~/components/CreateButtons.vue'
 
 export default {
   name: 'IndexPage',
@@ -94,6 +126,7 @@ export default {
     CarouselPanel,
     Headline,
     ItemsList,
+    CreateButtons,
   },
   layout: 'pageLayout',
   data: () => ({
