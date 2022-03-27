@@ -10,26 +10,19 @@
           :name="'page1'"
           tag-name="p"
           :menu-options="[1]"
-          :outer-class="'text-center'"
-          :button-class="'mx-1'"
-        >
-          page0
-        </CreateButtons>
+          :outer-class="'text-center mx-1'"
+        />
         <CreateButtons
           :name="'page1'"
           tag-name="p"
           :menu-options="[2]"
-          :outer-class="'text-center'"
-          :button-class="'mx-1'"
+          :outer-class="'text-center mx-1'"
         />
         <CreateButtons
           tag-name="p"
           :menu-options="[3]"
-          :outer-class="'text-center'"
-          :button-class="'mx-1'"
-        >
-          page2
-        </CreateButtons>
+          :outer-class="'text-center mx-1'"
+        />
       </div>
       <CreateButtons
         :name="'btn-container'"

@@ -16,7 +16,7 @@
           target="_blank"
         >
           <span class="button__text">
-            <slot>{{ val.title }}</slot>
+            {{ val.title }}
           </span>
         </a>
       </template>
@@ -30,7 +30,7 @@
           :to="val.to"
         >
           <span class="button__text">
-            <slot>{{ val.title }}</slot>
+            {{ val.title }}
           </span>
         </NuxtLink>
       </template>
@@ -43,7 +43,7 @@
           @click="customEvent(val.id)"
         >
           <span class="button__text">
-            <slot>{{ val.title }}</slot>
+            {{ val.title }}
           </span>
         </button>
       </template>
@@ -118,6 +118,7 @@ export default {
      * カスタムイベントの呼び出しを親コンポーネントに通知する。
      */
     customEvent(id) {
+      console.log('event-' + id) // eslint-disable-line no-console
       this.$emit('observeCustomEvent')
     },
   },
@@ -127,20 +128,20 @@ export default {
 <style scooped lang="scss">
 .button {
   width: fit-content;
-  &__text {
-    border: 2px solid $cBlack;
-    display: inline-block;
-    line-height: 1.4;
-    padding: 1em 4em;
-    font-weight: 700;
-    font-size: 1.2em;
-    text-align: center;
-    word-break: break-all;
-  }
+  max-width: 15rem;
+  border: 2px solid $cBlack;
+  display: inline-block;
+  line-height: 1.4;
+  padding: 1em 4em;
+  font-weight: 700;
+  font-size: 1.2em;
+  text-align: center;
+  // &__text {
+  //   //カスタム用class
+  // }
   &:hover {
     opacity: 0.4;
   }
-
   // ボタンを非活性化する場合、下記のclassを設置する。
   &.disable {
     * {

@@ -59,7 +59,7 @@ export default {
     },
     height: null,
   }),
-  mounted () {
+  mounted() {
     this.onResize()
   },
   methods: {
@@ -67,6 +67,6 @@ export default {
       this.windowSize = { x: window.innerWidth, y: window.innerHeight }
       this.height = this.windowSize.x / 2
     },
-  }
+  },
 }
 </script>

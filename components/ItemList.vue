@@ -187,10 +187,7 @@ export default {
     grid-template-columns: repeat(auto-fit, minmax(30%, 1fr)); //3列
   }
   @include mq-xl {
-    grid-template-columns: repeat(
-      auto-fit,
-      minmax(22%, 1fr)
-    ); //4列 TODO: カラム幅 検討
+    grid-template-columns: repeat(auto-fit, minmax(22%, 1fr)); //4列
   }
   &.width-constant {
     grid-template-columns: repeat(auto-fit, minmax(50%, 1fr)); //2列
