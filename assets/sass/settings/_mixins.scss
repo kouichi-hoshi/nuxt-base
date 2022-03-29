@@ -25,3 +25,16 @@
     @content;
   }
 }
+
+@mixin HeaderTitle($fontSize: 400%, $lineHeight: 1.5) {
+  font-size: $fontSize;
+  line-height: $lineHeight;
+}
+
+@mixin headlineMargin($start: 3, $end: 6, $position: top, $margin: $space * 2) {
+  @for $h from $start to $end {
+    h#{$h} {
+      margin-#{$position}: $margin;
+    }
+  }
+}

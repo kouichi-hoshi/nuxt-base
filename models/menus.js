@@ -34,4 +34,11 @@ export default [
     to: '/page4',
     type: 'internal',
   },
+  {
+    id: 6,
+    icon: 'mdi-apps',
+    title: 'blog index',
+    to: '/blog/',
+    type: 'internal',
+  },
 ]

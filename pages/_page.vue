@@ -1,11 +1,16 @@
 <template>
-  <div class="container">
-    <h2>{{ page }}</h2>
-  </div>
+  <article class="page container">
+    <header class="mt-6">
+      <HeaderTitle>{{ page }}</HeaderTitle>
+    </header>
+  </article>
 </template>
 
 <script>
+import HeaderTitle from '~/components/HeaderTitle.vue'
+
 export default {
+  components: { HeaderTitle },
   layout: 'pageLayout',
   data() {
     return {
@@ -20,3 +25,12 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.page {
+  @include headlineMargin();
+  .HeaderTitle {
+    @include HeaderTitle();
+  }
+}
+</style>
