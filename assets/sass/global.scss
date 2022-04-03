@@ -15,10 +15,17 @@
 
 a {
   text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 img {
   max-width: 100%;
+}
+
+ul {
+  list-style: none;
 }
 
 .pointer-events-none {

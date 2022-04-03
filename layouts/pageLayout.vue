@@ -8,6 +8,11 @@
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <SiteLogo :logo-options="logoOptions" />
       <v-spacer />
+      <LinkList
+        :menu-id="LinkListOptions.menuId"
+        :outer-class="LinkListOptions.outerClass"
+        :inner-class="LinkListOptions.innerClass"
+      />
     </v-app-bar>
 
     <v-main>
@@ -21,21 +26,28 @@
 </template>
 
 <script>
-import menuItems from '~/models/menus.js'
+import items from '~/models/menus.js'
 import SiteLogo from '~/components/SiteLogo.vue'
 import ListContainer from '~/components/ListContainer.vue'
+import LinkList from '~/components/LinkList.vue'
 
 export default {
   name: 'PageLayout',
   components: {
     SiteLogo,
     ListContainer,
+    LinkList,
   },
   data() {
     return {
       drawer: false,
       fixed: false,
-      items: menuItems,
+      items,
+      LinkListOptions: {
+        menuId: [1, 2, 7],
+        outerClass: 'd-flex pa-0',
+        innerClass: 'ml-4',
+      },
       logoOptions: {
         logoStyle: 'text',
         logoText: 'Nuxt-Base',

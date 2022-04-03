@@ -141,6 +141,7 @@ export default {
   // }
   &:hover {
     opacity: 0.4;
+    text-decoration: none;
   }
   // ボタンを非活性化する場合、下記のclassを設置する。
   &.disable {
