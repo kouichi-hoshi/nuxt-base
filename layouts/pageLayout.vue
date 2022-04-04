@@ -1,7 +1,7 @@
 <template>
   <v-app dark>
     <v-navigation-drawer v-model="drawer" fixed app disable-resize-watcher>
-      <ListContainer :items="items" />
+      <LinkListDrawer :links="links" />
     </v-navigation-drawer>
 
     <v-app-bar flat :height="52" app>
@@ -26,23 +26,23 @@
 </template>
 
 <script>
-import items from '~/models/menus.js'
+import links from '~/models/links.js'
 import SiteLogo from '~/components/SiteLogo.vue'
-import ListContainer from '~/components/ListContainer.vue'
+import LinkListDrawer from '~/components/LinkListDrawer.vue'
 import LinkList from '~/components/LinkList.vue'
 
 export default {
   name: 'PageLayout',
   components: {
     SiteLogo,
-    ListContainer,
+    LinkListDrawer,
     LinkList,
   },
   data() {
     return {
       drawer: false,
       fixed: false,
-      items,
+      links,
       LinkListOptions: {
         menuId: [1, 2, 7],
         outerClass: 'd-flex pa-0',

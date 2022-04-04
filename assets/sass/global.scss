@@ -28,6 +28,36 @@ ul {
   list-style: none;
 }
 
+.button {
+  width: fit-content;
+  max-width: 15rem;
+  border: 2px solid $cBlack;
+  display: inline-block;
+  line-height: 1.4;
+  font-weight: 700;
+  font-size: 1.2em;
+  text-align: center;
+  cursor: pointer;
+  // &__text {
+  //   //カスタム用class
+  // }
+  &:hover {
+    opacity: 0.4;
+    text-decoration: none;
+  }
+  // ボタンを非活性化する場合、下記のclassを設置する。
+  &.disable {
+    * {
+      pointer-events: none;
+      opacity: 0.2;
+    }
+  }
+  a {
+    display: block;
+    padding: 1em 4em;
+  }
+}
+
 .pointer-events-none {
   pointer-events: none;
 }

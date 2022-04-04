@@ -1,5 +1,5 @@
 <template>
-  <ul :class="outerClass">
+  <ul :class="outerClass" class="pa-0">
     <li v-for="(link, i) in getLink(menuId)" :key="i" :class="innerClass">
       <component
         :is="isInternalLink(link.path) ? 'nuxt-link' : 'a'"
@@ -7,13 +7,15 @@
         :href="isInternalLink(link.path) ? '' : link.path"
         :target="isInternalLink(link.path) ? '_self' : '_blank'"
       >
-        {{ link.label }}
+        <slot>{{ link.label }}</slot>
       </component>
     </li>
   </ul>
 </template>
 
 <script>
+import getLink from '~/functions/getLink.js'
+import isInternalLink from '~/functions/isInternalLink.js'
 import links from '~/models/links.js'
 
 export default {
@@ -40,32 +42,19 @@ export default {
         return ''
       },
     },
+    tagName: {
+      type: String,
+      default: () => {
+        return 'div'
+      },
+    },
   },
   data() {
     return {
       links,
+      getLink,
+      isInternalLink,
     }
-  },
-  methods: {
-    getLink(menuId) {
-      /**
-       * リンクIDを指定してリンクリストを作成する。
-       * @param {Array} menuId 使用したいメニューのid
-       * @param {Object} links 全メニューデータ
-       */
-      const result = []
-      for (const id of menuId) {
-        this.links.forEach((links) => {
-          if (id === links.id) {
-            result.push(links)
-          }
-        })
-      }
-      return result
-    },
-    isInternalLink(path) {
-      return !/^https?:\/\//.test(path)
-    },
   },
 }
 </script>

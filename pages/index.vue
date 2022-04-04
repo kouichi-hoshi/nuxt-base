@@ -6,28 +6,35 @@
       <Headline classes-outer="py-12 text-h2 text-center">Items</Headline>
       <ItemsList :items="itemsOptions.items" item-image-aspect-ratio="ar16x9" />
       <div class="mt-6 d-md-flex justify-center">
-        <CreateButtons
-          :name="'page1'"
+        <LinkList
           tag-name="p"
-          :menu-options="[1]"
-          :outer-class="'text-center mx-1'"
-        />
-        <CreateButtons
-          :name="'page1'"
+          :menu-id="[1]"
+          :outer-class="'text-center'"
+          :inner-class="'button mx-1 mt-2 min-width-220px'"
+        >
+          HOME
+        </LinkList>
+        <LinkList
           tag-name="p"
-          :menu-options="[2]"
-          :outer-class="'text-center mx-1'"
-        />
-        <CreateButtons
+          :menu-id="[2]"
+          :outer-class="'text-center'"
+          :inner-class="'button mx-1 mt-2 min-width-220px'"
+        >
+          PAGE1
+        </LinkList>
+        <LinkList
           tag-name="p"
-          :menu-options="[3]"
-          :outer-class="'text-center mx-1'"
-        />
+          :menu-id="[3]"
+          :outer-class="'text-center'"
+          :inner-class="'button mx-1 mt-2 min-width-220px'"
+        >
+          PAGE2
+        </LinkList>
       </div>
-      <CreateButtons
-        :name="'btn-container'"
-        :menu-options="[1, 2, 3]"
+      <LinkList
+        :menu-id="[1, 2, 3]"
         :outer-class="'mt-6 text-center'"
+        :inner-class="'button mx-1 mt-2 min-width-220px'"
       />
     </section>
 
@@ -111,7 +118,7 @@ import carouselData from '~/models/carouselData.js'
 import CarouselPanel from '~/components/CarouselPanel.vue'
 import Headline from '~/components/Headline.vue'
 import ItemsList from '~/components/ItemList.vue'
-import CreateButtons from '~/components/CreateButtons.vue'
+import LinkList from '~/components/LinkList.vue'
 
 export default {
   name: 'IndexPage',
@@ -119,7 +126,7 @@ export default {
     CarouselPanel,
     Headline,
     ItemsList,
-    CreateButtons,
+    LinkList,
   },
   layout: 'pageLayout',
   data: () => ({
@@ -148,5 +155,8 @@ export default {
 <style lang="scss">
 .v-carousel__controls {
   bottom: 12px !important;
+}
+.min-width-220px {
+  min-width: 220px;
 }
 </style>

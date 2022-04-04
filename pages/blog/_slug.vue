@@ -6,11 +6,10 @@
     </header>
     <section class="mt-6">
       <nuxt-content :document="content" />
-      <CreateButtons
-        :name="'blog top'"
+      <LinkList
         :menu-options="[6]"
         :outer-class="'mt-12'"
-        :button-class="'py-2 px-8'"
+        :inner-class="'py-2 px-8'"
       />
     </section>
   </article>
@@ -18,13 +17,13 @@
 
 <script>
 import Vue from 'vue'
-import CreateButtons from '~/components/CreateButtons.vue'
+import LinkList from '~/components/LinkList.vue'
 import HeaderTitle from '~/components/HeaderTitle.vue'
 
 export default Vue.extend({
   name: 'IndexPage',
   components: {
-    CreateButtons,
+    LinkList,
     HeaderTitle,
   },
   layout: 'pageLayout',
