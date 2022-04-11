@@ -1,11 +1,15 @@
 <template>
   <article class="blog blogIndex container">
-    <header class="mt-6">
-      <HeaderTitle>blog/index</HeaderTitle>
-    </header>
-    <section>
+    <HeaderTitle
+      outer-class="container my-12 text-center"
+      title-class="text-h2"
+      text-class="mt-12"
+    >
+      <template #header>blog/index</template>
+    </HeaderTitle>
+    <section class="text-center">
       <h3 class="text-h3">blog list</h3>
-      <ul class="mt-6">
+      <ul class="mt-6 pl-0">
         <li v-for="(val, key) in list" :key="key" class="mt-2">
           <a :href="val.path">
             {{ val.title }}

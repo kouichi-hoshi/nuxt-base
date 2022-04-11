@@ -1,8 +1,15 @@
 <template>
-  <article class="page container">
-    <header class="mt-6">
-      <HeaderTitle>{{ page }}</HeaderTitle>
-    </header>
+  <article class="page">
+    <HeaderTitle
+      outer-class="container my-12 text-center"
+      title-class="text-h2"
+      text-class="mt-12"
+    >
+      <template #header>{{ page }}</template>
+      <template #text>
+        {{ $route.params }}
+      </template>
+    </HeaderTitle>
   </article>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <div v-resize="onResize" class="carouselPanel" :class="classesOuter">
+  <div v-resize="onResize" class="carouselPanel" :class="classOuter">
     <v-carousel
       v-model="model"
       cycle
@@ -44,7 +44,7 @@ export default {
         return {}
       },
     },
-    classesOuter: {
+    classOuter: {
       type: String,
       default: () => {
         return ''

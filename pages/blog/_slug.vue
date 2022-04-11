@@ -1,9 +1,16 @@
 <template>
   <article class="blog container">
-    <header class="mt-6">
-      <HeaderTitle>{{ content.title }}</HeaderTitle>
-      <p>{{ content.description }}</p>
-    </header>
+    <HeaderTitle
+      outer-class="container my-12 text-center"
+      title-class="text-h2 mb-12"
+    >
+      <template #header>
+        {{ content.title }}
+      </template>
+      <template #text>
+        {{ content.description }}
+      </template>
+    </HeaderTitle>
     <section class="mt-6">
       <nuxt-content :document="content" />
       <LinkList

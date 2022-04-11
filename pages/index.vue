@@ -1,9 +1,11 @@
 <template>
   <div class="l-container">
-    <CarouselPanel :carousel-options="carouselOptions" classes-outer="mb-12" />
+    <CarouselPanel :carousel-options="carouselOptions" class-outer="mb-12" />
 
     <section class="mb-12">
-      <Headline class-headline="container py-12 text-h2 text-center">Items</Headline>
+      <Headline class-headline="container py-12 text-h2 text-center">
+        Items
+      </Headline>
       <ItemsList :items="itemsOptions.items" item-image-aspect-ratio="ar16x9" />
       <div class="mt-6 d-md-flex justify-center">
         <LinkList
@@ -54,10 +56,7 @@
     </section>
 
     <section class="mb-12">
-      <Headline
-        tag-name="h4"
-        classes-headline="py-12 text-center text-h4"
-      >
+      <Headline tag-name="h4" class-headline="py-12 text-center text-h4">
         Items3
       </Headline>
       <ItemsList
@@ -73,14 +72,14 @@
     <section class="mb-12">
       <Headline
         tag-name="h4"
-        classes-outer="py-12 text-center"
-        classes-headline="text-h4"
+        class-outer="py-12 text-center"
+        class-headline="text-h4"
       >
         Items Square
       </Headline>
       <ItemsList
         :items="itemsOptions.itemsSquare"
-        classes-outer="start-two-column mx-auto"
+        class-outer="start-two-column mx-auto"
         items-gap="gap-double"
         item-image-aspect-ratio="ar1x1"
         items-container="md"
@@ -98,7 +97,7 @@
       <ItemsList
         gallery-mode
         :items="itemsOptions.itemsSquare"
-        classes-outer="mx-auto"
+        class-outer="mx-auto"
         items-gap="gap-normal"
         item-image-aspect-ratio="ar1x1"
         width-constant
