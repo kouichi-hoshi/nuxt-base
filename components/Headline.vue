@@ -1,9 +1,7 @@
 <template>
-  <div :class="classesOuter">
-    <component :is="tagName" :class="classesHeadline">
-      <slot>headline</slot>
-    </component>
-  </div>
+  <component :is="tagName" :class="classHeadline">
+    <slot>headline</slot>
+  </component>
 </template>
 
 <script>
@@ -16,13 +14,7 @@ export default {
         return 'h2'
       },
     },
-    classesOuter: {
-      type: String,
-      default: () => {
-        return 'my-12, text-h2, text-center'
-      },
-    },
-    classesHeadline: {
+    classHeadline: {
       type: String,
       default: () => {
         return 'text-h2'

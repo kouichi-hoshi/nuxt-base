@@ -3,7 +3,7 @@
     <CarouselPanel :carousel-options="carouselOptions" classes-outer="mb-12" />
 
     <section class="mb-12">
-      <Headline classes-outer="py-12 text-h2 text-center">Items</Headline>
+      <Headline class-headline="container py-12 text-h2 text-center">Items</Headline>
       <ItemsList :items="itemsOptions.items" item-image-aspect-ratio="ar16x9" />
       <div class="mt-6 d-md-flex justify-center">
         <LinkList
@@ -41,8 +41,7 @@
     <section class="mb-12">
       <Headline
         tag-name="h3"
-        classes-outer="py-12 text-center"
-        classes-headline="text-h3"
+        class-headline="container py-12 text-center text-h3"
       >
         Items2
       </Headline>
@@ -57,8 +56,7 @@
     <section class="mb-12">
       <Headline
         tag-name="h4"
-        classes-outer="py-12 text-center"
-        classes-headline="text-h4"
+        classes-headline="py-12 text-center text-h4"
       >
         Items3
       </Headline>
@@ -93,8 +91,7 @@
     <section class="mb-12">
       <Headline
         tag-name="h4"
-        classes-outer="py-12 text-center"
-        classes-headline="text-h4"
+        class-headline="container py-12 text-center text-h4"
       >
         MediaGallery
       </Headline>
