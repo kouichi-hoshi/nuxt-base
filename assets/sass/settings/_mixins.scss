@@ -26,9 +26,24 @@
   }
 }
 
-@mixin HeaderTitle($fontSize: 400%, $lineHeight: 1.5) {
+@mixin text(
+  $ff: inherit,
+  $fs: normal,
+  $fw: 500,
+  $fontSize: 4rem,
+  $fontSizeMd: 6rem,
+  $lineHeight: 1.5,
+  $lineHeightMd: 2
+) {
+  font-family: $ff;
+  font-style: $fs;
+  font-weight: $fw;
   font-size: $fontSize;
   line-height: $lineHeight;
+  @include mq-md {
+    font-size: $fontSizeMd;
+    line-height: $lineHeightMd;
+  }
 }
 
 @mixin headlineMargin($start: 3, $end: 6, $position: top, $margin: $space * 2) {

@@ -1,5 +1,5 @@
 <template>
-  <component :is="outerTagName" :class="outerClass" class="header-title">
+  <component :is="outerTagName" :class="outerClass">
     <component :is="titleTagName" :class="titleClass">
       <slot name="header" />
     </component>
@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: 'HeaderTitle',
+  name: 'MainHeader',
   props: {
     outerTagName: {
       type: String,
@@ -22,7 +22,7 @@ export default {
     titleTagName: {
       type: String,
       default: () => {
-        return 'h2'
+        return 'h1'
       },
     },
     textTagName: {
@@ -66,8 +66,42 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.HeaderTitle {
-  @include HeaderTitle();
+<style lang="scss" scoped>
+@import '~/assets/sass/global.scss';
+
+.main-header {
+  &__title {
+    @include text();
+  }
+  &__message {
+    @include text($fontSize: 1rem, $fontSizeMd: 1.4rem, $fw: 400);
+  }
+}
+
+.page-main-header {
+  &__title {
+    @include text($fontSize: 1rem, $fontSizeMd: 4rem);
+  }
+  &__message {
+    @include text($fontSize: 1rem, $fontSizeMd: 1.4rem, $fw: 400);
+  }
+}
+
+.blog-index-main-header {
+  &__title {
+    @include text($fontSize: 1rem, $fontSizeMd: 4rem);
+  }
+  &__message {
+    @include text($fontSize: 1rem, $fontSizeMd: 1.4rem, $fw: 400);
+  }
+}
+
+.blog-main-header {
+  &__title {
+    @include text($fontSize: 1rem, $fontSizeMd: 2rem);
+  }
+  &__message {
+    @include text($fontSize: 1rem, $fontSizeMd: 1.4rem, $fw: 400);
+  }
 }
 </style>

@@ -4,6 +4,11 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
+  // 環境変数（.env）
+  publicRuntimeConfig: {
+    siteTitle: process.env.SITE_TITLE,
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - nuxt-base',
@@ -61,7 +66,11 @@ export default {
     '@nuxtjs/stylelint-module',
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    '@nuxtjs/moment',
   ],
+  moment: {
+    locales: ['ja'],
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ['@nuxtjs/style-resources', '@nuxt/content'],

@@ -1,24 +1,18 @@
 <template>
-  <article class="page">
-    <HeaderTitle
-      outer-class="container my-12 text-center"
-      title-class="text-h2"
-      text-class="mt-12"
+  <article class="page l-container">
+    <MainHeader
+      class="page-main-header container text-center my-5 my-md-6"
+      title-class="page-main-header__title mt-6"
+      text-class="page-main-header__message mb-12"
     >
       <template #header>{{ page }}</template>
-      <template #text>
-        {{ $route.params }}
-      </template>
-    </HeaderTitle>
+      <template #text>{{ $route.params }}</template>
+    </MainHeader>
   </article>
 </template>
 
 <script>
-import HeaderTitle from '~/components/HeaderTitle.vue'
-
 export default {
-  components: { HeaderTitle },
-  layout: 'pageLayout',
   data() {
     return {
       page: this.$route.params.page,
@@ -33,11 +27,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .page {
-  @include headlineMargin();
-  .HeaderTitle {
-    @include HeaderTitle();
-  }
 }
 </style>

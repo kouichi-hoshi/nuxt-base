@@ -1,5 +1,14 @@
 <template>
-  <div class="l-container">
+  <article class="home l-container">
+    <MainHeader
+      class="main-header container text-center my-5 my-md-6"
+      title-class="main-header__title mt-6"
+      text-class="main-header__message mb-12"
+    >
+      <template #header>{{ $config.siteTitle }}</template>
+      <template #text>nuxt.js template</template>
+    </MainHeader>
+
     <CarouselPanel :carousel-options="carouselOptions" class-outer="mb-12" />
 
     <section class="mb-12">
@@ -11,32 +20,32 @@
         <LinkList
           tag-name="p"
           :menu-id="[1]"
-          :outer-class="'text-center'"
-          :inner-class="'button mx-1 mt-2 min-width-220px'"
+          outer-class="text-center"
+          inner-class="button mx-1 mt-2 min-width-220px"
         >
           HOME
         </LinkList>
         <LinkList
           tag-name="p"
           :menu-id="[2]"
-          :outer-class="'text-center'"
-          :inner-class="'button mx-1 mt-2 min-width-220px'"
+          outer-class="text-center"
+          inner-class="button mx-1 mt-2 min-width-220px"
         >
           PAGE1
         </LinkList>
         <LinkList
           tag-name="p"
           :menu-id="[3]"
-          :outer-class="'text-center'"
-          :inner-class="'button mx-1 mt-2 min-width-220px'"
+          outer-class="text-center"
+          inner-class="button mx-1 mt-2 min-width-220px"
         >
           PAGE2
         </LinkList>
       </div>
       <LinkList
         :menu-id="[1, 2, 3]"
-        :outer-class="'mt-6 text-center'"
-        :inner-class="'button mx-1 mt-2 min-width-220px'"
+        outer-class="mt-6 text-center"
+        inner-class="button mx-1 mt-2 min-width-220px"
       />
     </section>
 
@@ -103,7 +112,7 @@
         width-constant
       />
     </section>
-  </div>
+  </article>
 </template>
 
 <script>
@@ -124,7 +133,6 @@ export default {
     ItemsList,
     LinkList,
   },
-  layout: 'pageLayout',
   data: () => ({
     itemsOptions: {
       items,
@@ -148,7 +156,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .v-carousel__controls {
   bottom: 12px !important;
 }

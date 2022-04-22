@@ -1,16 +1,17 @@
 <template>
-  <article class="blog blogIndex container">
-    <HeaderTitle
-      outer-class="container my-12 text-center"
-      title-class="text-h2"
-      text-class="mt-12"
+  <article class="blog-index l-container">
+    <MainHeader
+      class="blog-index-main-header container text-center my-5 my-md-6"
+      title-class="blog-index-main-header__title mt-6"
+      text-class="blog-index-main-header__message mb-12"
+      no-text
     >
-      <template #header>blog/index</template>
-    </HeaderTitle>
-    <section class="text-center">
-      <h3 class="text-h3">blog list</h3>
-      <ul class="mt-6 pl-0">
-        <li v-for="(val, key) in list" :key="key" class="mt-2">
+      <template #header>Blog</template>
+    </MainHeader>
+    <section class="text-center container">
+      <h3 class="text-h3">List</h3>
+      <ul class="my-12 pl-0">
+        <li v-for="(val, key) in list" :key="key" class="mt-6">
           <a :href="val.path">
             {{ val.title }}
           </a>
@@ -22,12 +23,11 @@
 
 <script>
 import Vue from 'vue'
-import HeaderTitle from '~/components/HeaderTitle.vue'
+import MainHeader from '~/components/MainHeader.vue'
 
 export default Vue.extend({
   name: 'BlogIndex',
-  components: { HeaderTitle },
-  layout: 'pageLayout',
+  components: { MainHeader },
   async asyncData({ $content }) {
     const list = await $content({ deep: true }).fetch()
     return { list }
@@ -35,11 +35,7 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="scss">
-.blog {
-  @include headlineMargin();
-  .HeaderTitle {
-    @include HeaderTitle();
-  }
+<style lang="scss" scoped>
+.blog-index {
 }
 </style>
