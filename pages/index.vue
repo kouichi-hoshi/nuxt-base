@@ -6,7 +6,7 @@
       text-class="main-header__message mb-12"
     >
       <template #header>{{ $config.siteTitle }}</template>
-      <template #text>nuxt.js template</template>
+      <template #text>Nuxt.js template</template>
     </MainHeader>
 
     <CarouselPanel :carousel-options="carouselOptions" class-outer="mb-12" />
