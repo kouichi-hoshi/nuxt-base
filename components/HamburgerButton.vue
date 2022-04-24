@@ -1,6 +1,6 @@
 <template>
   <div
-    id="btn07"
+    :id="btnId"
     :class="{ active: hamburgerActive }"
     class="btn-trigger"
     @click="hamburger()"
@@ -18,6 +18,12 @@ export default {
       type: Boolean,
       default: () => {
         return false
+      },
+    },
+    btnId: {
+      type: String,
+      default: () => {
+        return 'btn07'
       },
     },
   },
@@ -54,7 +60,7 @@ export default {
   height: 44px;
   cursor: pointer;
   background: rgba(0, 0, 0, 0.7);
-  border: solid 10px transparent;
+  border: solid 15px transparent;
   box-sizing: content-box !important;
 }
 .btn-trigger span {

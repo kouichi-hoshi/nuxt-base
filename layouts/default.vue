@@ -3,6 +3,7 @@
     <v-navigation-drawer v-model="drawer" fixed app disable-resize-watcher>
       <div class="drawer-inner d-flex justify-end">
         <HamburgerButton
+          btn-id="btn06"
           :check-hamburger="checkDrawer"
           @observeHamburger="changeDrawer"
         />
@@ -22,7 +23,14 @@
       />
     </v-app-bar>
     <v-main>
-      <div v-intersect="onIntersect"></div>
+      <div
+        v-intersect="{
+          handler: onIntersect,
+          options: {
+            rootMargin: '300px',
+          },
+        }"
+      />
       <Nuxt />
     </v-main>
     <v-footer :absolute="!fixed" app>
@@ -33,6 +41,7 @@
       :class="isIntersecting ? 'beforeScroll' : 'afterScroll'"
     >
       <HamburgerButton
+        btn-id="btn06"
         :check-hamburger="checkDrawer"
         @observeHamburger="changeDrawer"
       />
@@ -102,7 +111,6 @@ export default {
 
 <style lang="scss" scoped>
 .drawer-inner {
-  width: 256px;
   background: rgba(0, 0, 0, 0.7);
   > * {
     background: transparent;
