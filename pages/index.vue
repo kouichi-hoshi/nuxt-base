@@ -33,20 +33,7 @@
         >
           PAGE1
         </LinkList>
-        <LinkList
-          tag-name="p"
-          :menu-id="[3]"
-          outer-class="text-center"
-          inner-class="button mx-1 mt-2 min-width-220px"
-        >
-          PAGE2
-        </LinkList>
       </div>
-      <LinkList
-        :menu-id="[1, 2, 3]"
-        outer-class="mt-6 text-center"
-        inner-class="button mx-1 mt-2 min-width-220px"
-      />
     </section>
 
     <section class="mb-12">
@@ -74,24 +61,6 @@
         item-image-aspect-ratio="ar3x2"
         items-container="lg"
         item-title-tag="h3"
-        item-text-tag="div"
-      />
-    </section>
-
-    <section class="mb-12">
-      <Headline
-        tag-name="h4"
-        class-outer="py-12 text-center"
-        class-headline="text-h4"
-      >
-        Items Square
-      </Headline>
-      <ItemsList
-        :items="itemsOptions.itemsSquare"
-        class-outer="start-two-column mx-auto"
-        items-gap="gap-double"
-        item-image-aspect-ratio="ar1x1"
-        items-container="md"
         item-text-tag="div"
       />
     </section>
