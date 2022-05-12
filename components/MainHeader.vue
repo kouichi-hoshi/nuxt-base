@@ -67,8 +67,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~/assets/sass/global.scss';
-
 .main-header {
   &__title {
     @include text();
