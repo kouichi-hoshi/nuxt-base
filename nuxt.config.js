@@ -107,6 +107,11 @@ export default {
     },
   },
 
+  // storybook module configuration: https://storybook.nuxtjs.org/
+  storybook: {
+    // Options
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 }
