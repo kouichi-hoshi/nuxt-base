@@ -1,8 +1,12 @@
 :root {
-  //container max-Width
+  // container max-Width
   --maxWidthMd: 900px;
   --maxWidthLg: 1185px;
   --maxWidthXl: 1785px;
+  // gap
+  --gap12: 12px;
+  --gap24: 24px;
+  --gap36: 36px;
 }
 
 a {
