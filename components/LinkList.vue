@@ -42,12 +42,6 @@ export default {
         return ''
       },
     },
-    tagName: {
-      type: String,
-      default: () => {
-        return 'div'
-      },
-    },
   },
   data() {
     return {
