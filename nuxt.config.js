@@ -26,10 +26,18 @@ export default {
         content: 'ディスクリプション説明文',
       },
       { name: 'format-detection', content: 'telephone=no' },
-      { hid: 'og:site_name', property: 'og:site_name', content: process.env.SITE_TITLE },
+      {
+        hid: 'og:site_name',
+        property: 'og:site_name',
+        content: process.env.SITE_TITLE,
+      },
       { hid: 'og:type', property: 'og:type', content: 'website' },
       { hid: 'og:url', property: 'og:url', content: 'https://example.com' },
-      { hid: 'og:title', property: 'og:title', content: process.env.SITE_TITLE },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: process.env.SITE_TITLE,
+      },
       {
         hid: 'og:description',
         property: 'og:description',
