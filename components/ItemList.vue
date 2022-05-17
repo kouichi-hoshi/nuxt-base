@@ -50,13 +50,13 @@ export default {
         return []
       },
     },
-      // falseを指定するとデフォルトのレイアウトを解除する
-      layoutDefault: {
-        type: Boolean,
-        default: () => {
-          return true
-        },
+    // falseを指定するとデフォルトのレイアウトを解除する
+    layoutDefault: {
+      type: Boolean,
+      default: () => {
+        return true
       },
+    },
     // 最も外側の要素にclassを追加できる
     classOuter: {
       type: String,
