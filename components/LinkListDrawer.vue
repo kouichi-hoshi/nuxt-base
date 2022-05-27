@@ -1,17 +1,17 @@
 <template>
   <v-list class="list-container" :tag="tagName">
     <v-list-item
-      v-for="(menu, i) in menus"
+      v-for="(link, i) in links"
       :key="i"
-      :to="menu.path"
-      router
-      exact
+      :to="isInternalLink(link.path) ? link.path : ''"
+      :href="isInternalLink(link.path) ? '' : link.path"
+      :target="isInternalLink(link.path) ? '_self' : '_blank'"
     >
       <v-list-item-action>
-        <v-icon>{{ menu.icon }}</v-icon>
+        <v-icon>{{ link.icon }}</v-icon>
       </v-list-item-action>
       <v-list-item-content>
-        <v-list-item-title v-text="menu.label" />
+        <v-list-item-title v-text="link.label" />
       </v-list-item-content>
     </v-list-item>
   </v-list>
@@ -39,17 +39,7 @@ export default {
   data() {
     return {
       isInternalLink,
-      menus: [],
     }
-  },
-  created() {
-    const result = {}
-    this.links.forEach((link, key) => {
-      if (isInternalLink(link.path)) {
-        result[key] = link
-      }
-    })
-    this.menus = result
   },
 }
 </script>
