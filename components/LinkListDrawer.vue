@@ -1,5 +1,5 @@
 <template>
-  <v-list class="list-container">
+  <v-list class="list-container" :tag="tagName">
     <v-list-item
       v-for="(menu, i) in menus"
       :key="i"
@@ -19,13 +19,25 @@
 
 <script>
 import isInternalLink from '~/functions/isInternalLink.js'
-import links from '~/models/links.js'
 
 export default {
   name: 'LinkListDrawer',
+  props: {
+    tagName: {
+      type: String,
+      default: () => {
+        return 'div'
+      },
+    },
+    links: {
+      type: Array,
+      default: () => {
+        return []
+      },
+    },
+  },
   data() {
     return {
-      links,
       isInternalLink,
       menus: [],
     }

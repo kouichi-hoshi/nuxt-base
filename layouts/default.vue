@@ -8,7 +8,7 @@
           @observeHamburger="changeDrawer"
         />
       </div>
-      <LinkListDrawer :links="links" />
+      <LinkListDrawer :links="links" tag-name="nav" />
     </v-navigation-drawer>
     <v-app-bar flat :height="52">
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
