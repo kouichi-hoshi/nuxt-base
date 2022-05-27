@@ -57,3 +57,43 @@ ul {
 .pointer-events-none {
   pointer-events: none;
 }
+
+.mask {
+  object-fit: cover;
+  max-width: 100%;
+  &.show {
+    transition-duration: 0.6s;
+    transition-timing-function: ease-in-out;
+  }
+  &.mask-1 {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  &.mask-1.show {
+    clip-path: inset(0 0 0 0);
+  }
+
+  &.mask-2 {
+    clip-path: inset(0 0 0 100%);
+  }
+
+  &.mask-2.show {
+    clip-path: inset(0 0 0 0);
+  }
+
+  &.mask-3 {
+    clip-path: inset(100% 0 100% 0);
+  }
+
+  &.mask-3.show {
+    clip-path: inset(0 0 0 0);
+  }
+
+  &.mask-4 {
+    clip-path: circle(0 at center);
+  }
+
+  &.mask-4.show {
+    clip-path: circle(100% at center);
+  }
+}

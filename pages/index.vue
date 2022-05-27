@@ -9,31 +9,66 @@
       <template #text>Nuxt.js template</template>
     </MainHeader>
 
-    <CarouselPanel :carousel-options="carouselOptions" class-outer="mb-12" />
+    <intersect>
+      <CarouselPanel :carousel-options="carouselOptions" class-outer="mb-12" />
+    </intersect>
 
     <section class="mb-12">
-      <Headline class-headline="container py-12 text-h2 text-center">
-        Items
-      </Headline>
-      <ItemsList :items="itemsOptions.items" aspect-ratio="3/2;" />
-      <div class="mt-6 d-md-flex justify-center">
-        <LinkList
-          tag-name="p"
-          :menu-id="[1]"
-          outer-class="text-center"
-          inner-class="button mx-1 mt-2"
-        >
-          HOME
-        </LinkList>
-        <LinkList
-          tag-name="p"
-          :menu-id="[2]"
-          outer-class="text-center"
-          inner-class="button mx-1 mt-2"
-        >
-          PAGE1
-        </LinkList>
-      </div>
+      <intersect>
+        <Headline class-headline="container py-12 text-h2 text-center">
+          Items
+        </Headline>
+        <ItemsList :items="itemsOptions.items" aspect-ratio="3/2;" />
+      </intersect>
+      <intersect>
+        <div class="mt-6 d-md-flex justify-center">
+          <LinkList
+            tag-name="p"
+            :menu-id="[1]"
+            outer-class="text-center"
+            inner-class="button mx-1 mt-2"
+          >
+            HOME
+          </LinkList>
+          <LinkList
+            tag-name="p"
+            :menu-id="[2]"
+            outer-class="text-center"
+            inner-class="button mx-1 mt-2"
+          >
+            PAGE1
+          </LinkList>
+        </div>
+      </intersect>
+    </section>
+
+    <section class="mb-12">
+      <intersect>
+        <Headline class-headline="container py-12 text-h2 text-center">
+          Items
+        </Headline>
+        <ItemsList :items="itemsOptions.items" aspect-ratio="3/2;" />
+      </intersect>
+      <intersect>
+        <div class="mt-6 d-md-flex justify-center">
+          <LinkList
+            tag-name="p"
+            :menu-id="[1]"
+            outer-class="text-center"
+            inner-class="button mx-1 mt-2"
+          >
+            HOME
+          </LinkList>
+          <LinkList
+            tag-name="p"
+            :menu-id="[2]"
+            outer-class="text-center"
+            inner-class="button mx-1 mt-2"
+          >
+            PAGE1
+          </LinkList>
+        </div>
+      </intersect>
     </section>
   </article>
 </template>
@@ -47,6 +82,7 @@ import CarouselPanel from '~/components/CarouselPanel.vue'
 import Headline from '~/components/Headline.vue'
 import ItemsList from '~/components/ItemList.vue'
 import LinkList from '~/components/LinkList.vue'
+import intersect from '~/components/intersect.vue'
 
 export default {
   name: 'IndexPage',
@@ -55,6 +91,7 @@ export default {
     Headline,
     ItemsList,
     LinkList,
+    intersect,
   },
   data: () => ({
     itemsOptions: {
