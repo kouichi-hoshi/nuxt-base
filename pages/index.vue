@@ -111,7 +111,15 @@ export default {
     }
   },
   created() {
-    this.carouselOptions.carouselItems = createPath(carouselData, '/images/')
+    // 画像のディリクトリパスを追加
+    this.itemsOptions.items.forEach((item) => {
+      item.fileName = '/images/sample/' + item.fileName
+    })
+    // 画像のディリクトリパスを追加
+    this.carouselOptions.carouselItems = createPath(
+      carouselData,
+      '/images/sample/'
+    )
   },
 }
 </script>

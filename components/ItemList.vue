@@ -11,10 +11,10 @@
       flat
       class="item-list__inner"
     >
-      <a :href="item.link" :class="{ 'pointer-events-none': !item.link }">
+      <a :href="item.href" :class="{ 'pointer-events-none': !item.href }">
         <img
-          v-if="item.src"
-          :src="item.src"
+          v-if="item.fileName"
+          :src="item.fileName"
           :alt="item.title"
           class="item-list__img"
           :style="'aspect-ratio:' + aspectRatio"
@@ -22,7 +22,7 @@
         <v-card-title
           v-if="item.title"
           :tag="itemTitleTag"
-          :class="{ 'pointer-events-none': !item.link }"
+          :class="{ 'pointer-events-none': !item.href }"
         >
           {{ item.title }}
         </v-card-title>
